@@ -1,6 +1,6 @@
 .App {
-  padding: 30px;
-  display: flex;
+  width: 600px;
+  margin: 20px auto;
 }
 
 .App > div {
@@ -12,4 +12,25 @@
   background-color: #ccce8f;
   border-radius: 5px;
   padding: 20px;
+}
+
+.button_green {
+  background-color: green;
+}
+.button_red {
+  background-color: red;
+}
+
+.button_circle_green {
+  height: 15px;
+  width: 15px;
+  border-radius: 15px;
+  background-color: green;
+}
+
+.button_circle_red {
+  height: 15px;
+  width: 15px;
+  border-radius: 15px;
+  background-color: red;
 }
