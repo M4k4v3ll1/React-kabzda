@@ -25,7 +25,7 @@ export const UncontrolledAccordion: FC<AccordionType> = ({title}) => {
     )
 }
 
-const AccordionTitle: FC<AccordionTitleType> = ({title, collapsedHandler}) => {
+export const AccordionTitle: FC<AccordionTitleType> = ({title, collapsedHandler}) => {
 
     return <h3 onClick={collapsedHandler}>{title}</h3>
 }

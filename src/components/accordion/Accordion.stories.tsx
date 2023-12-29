@@ -3,17 +3,18 @@ import {Accordion} from './Accordion';
 import React, {useState} from "react";
 
 export default {
+    title: 'Accordion',
     component: Accordion,
 };
 
 
 const onChangeHandler = action('onChange')
 
-export const CollapsedAccordion = () => {
+export const CollapsedMode = () => {
     return <Accordion title={'Collapsed Accordion'} setCollapsed={onChangeHandler} collapsed={true}/>
 
 }
-export const OpenedAccordion = () => {
+export const OpenedMode = () => {
     return <Accordion title={'Opened Accordion'} setCollapsed={onChangeHandler} collapsed={false}/>
 }
 
