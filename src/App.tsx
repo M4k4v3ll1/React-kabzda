@@ -6,6 +6,7 @@ import {OnOff} from "./components/onOff/OnOff";
 import {UncontrolledAccordion} from "./components/uncontrolledAccordion/UncontrolledAccordion";
 import {Rating, RatingValueType} from "./components/rating/Rating";
 import {UncontrolledOnOff} from "./components/uncontrolledOnOff/UncontrolledOnOff";
+import {Select} from "./components/select/Select";
 
 type PageTitleProps = {
     title: string
@@ -47,6 +48,7 @@ function App() {
                 <UncontrolledOnOff onChange={setIsOn}/>{on.toString()}
                 <OnOff on={on} setIsOn={setIsOn}/>
             </div>
+            <Select value={'Orsk'} onChange={() => console.log('Let\'s fight)')} items={accordionBodyItems}/>
         </div>
     );
 }
