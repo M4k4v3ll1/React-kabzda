@@ -1,5 +1,5 @@
 import React, {FC, useReducer} from "react";
-import {reducer} from "./uncontrolledAccordion-reducer";
+import {uncontrolledAccordionReducer} from "./uncontrolledAccordionReducer";
 
 type AccordionType = {
     title: string
@@ -16,8 +16,9 @@ export type StateType = {
 }
 
 export const UncontrolledAccordion: FC<AccordionType> = ({title}) => {
+    console.log('UncontrolledAccordion was rendered')
     //const [collapsed, setCollapsed] = useState(true)
-    const [state, dispatch] = useReducer(reducer, {collapsed: false})
+    const [state, dispatch] = useReducer(uncontrolledAccordionReducer, {collapsed: false})
 
     const collapsedHandler = () => {
         dispatch({type: 'TOGGLE-COLLAPSED'})
@@ -25,8 +26,8 @@ export const UncontrolledAccordion: FC<AccordionType> = ({title}) => {
 
     return (
         <div>
-            <AccordionTitle title={title} collapsedHandler={collapsedHandler}/>
-            {!state.collapsed && <AccordionBody/>}
+            <AccordionTitleContainer title={title} collapsedHandler={collapsedHandler}/>
+            {!state.collapsed && <AccordionBodyContainer/>}
         </div>
     )
 }
@@ -43,3 +44,6 @@ function AccordionBody() {
         <li>3</li>
     </ul>
 }
+
+const AccordionTitleContainer = React.memo(AccordionTitle)
+const AccordionBodyContainer = React.memo(AccordionBody)

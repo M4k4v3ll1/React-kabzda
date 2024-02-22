@@ -13,15 +13,16 @@ type RatingPropsType = {
 }
 
 export const UncontrolledRating = (props: RatingPropsType) => {
+    console.log('UncontrolledRating was rendered')
     const [value, setValue] = useState<RatingValueType>(props.defaultValue ? props.defaultValue : 0)
 
     return (
         <>
-            <Star selected={value > 0} onClickHandler={() => {setValue(1); props.onChange(1);}}/>
-            <Star selected={value > 1} onClickHandler={() => {setValue(2); props.onChange(2);}}/>
-            <Star selected={value > 2} onClickHandler={() => {setValue(3); props.onChange(3);}}/>
-            <Star selected={value > 3} onClickHandler={() => {setValue(4); props.onChange(4);}}/>
-            <Star selected={value > 4} onClickHandler={() => {setValue(5); props.onChange(5);}}/>
+            <StarContainer selected={value > 0} onClickHandler={() => {setValue(1); props.onChange(1);}}/>
+            <StarContainer selected={value > 1} onClickHandler={() => {setValue(2); props.onChange(2);}}/>
+            <StarContainer selected={value > 2} onClickHandler={() => {setValue(3); props.onChange(3);}}/>
+            <StarContainer selected={value > 3} onClickHandler={() => {setValue(4); props.onChange(4);}}/>
+            <StarContainer selected={value > 4} onClickHandler={() => {setValue(5); props.onChange(5);}}/>
         </>
     )
 }
@@ -33,3 +34,5 @@ const Star = (props: StarPropsType) => {
         <b>star </b>
         : 'star '}</span>
 };
+
+const StarContainer = React.memo(Star)

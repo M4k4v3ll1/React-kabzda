@@ -1,5 +1,5 @@
 import {action} from '@storybook/addon-actions'
-import {Accordion, itemsType} from './Accordion';
+import {Accordion, AccordionItemsType} from './Accordion';
 import React, {useState} from "react";
 
 export default {
@@ -10,7 +10,7 @@ export default {
 
 const onChangeHandler = action('onChange')
 const onClickItemHandler = action('some item was changed')
-const items: itemsType[] = [
+const items: AccordionItemsType[] = [
     {title: 'Pavel', value: '1'},
     {title: 'Egor', value: '2'},
     {title: 'Maxim', value: '3'}

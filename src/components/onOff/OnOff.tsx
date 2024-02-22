@@ -6,7 +6,7 @@ export type OnOffPropsType = {
 }
 
 export const OnOff: FC<OnOffPropsType> = (props) => {
-
+    console.log('OnOff was rendered')
     const onStyle = {
         width: '30px',
         height: '20px',

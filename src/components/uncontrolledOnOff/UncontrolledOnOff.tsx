@@ -6,7 +6,7 @@ type UncontrolledOnOffPropsType = {
 }
 
 export const UncontrolledOnOff = (props: UncontrolledOnOffPropsType) => {
-
+    console.log('UncontrolledOnOff was rendered')
     let [on, setIsOn] = useState(props.defaultOn ? props.defaultOn : false)
 
    const onStyle = {

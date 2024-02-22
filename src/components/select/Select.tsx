@@ -1,5 +1,4 @@
 import React, {FC, useState, KeyboardEvent, useEffect} from 'react';
-import {itemsType} from "../accordion/Accordion";
 import s from './Select.module.css'
 
 
@@ -8,8 +7,15 @@ export type SelectPropsType = {
     onChange: (value: string) => void
     items: itemsType[]
 }
+export type itemsType = {
+    title: string
+    value: string
+    countryID: string
+    population: number
+}
 
 export const Select: FC<SelectPropsType> = ({value, onChange, items}) => {
+    console.log('Select was rendered')
     const [isActive, setActive] = useState<boolean>(false)
     const [hoveredValue, sethoveredValue] = useState<string | undefined>(value)
     const selectedItem = items.find(i => i.value === value)
@@ -49,11 +55,11 @@ export const Select: FC<SelectPropsType> = ({value, onChange, items}) => {
 
     return (
         <>
-            <select>
-                <option value="">Samara</option>
-                <option value="">Orsk</option>
-                <option value="">Pskov</option>
-            </select>
+            {/*<select>*/}
+            {/*    <option value="">Samara</option>*/}
+            {/*    <option value="">Orsk</option>*/}
+            {/*    <option value="">Pskov</option>*/}
+            {/*</select>*/}
             <div
                 className={s.select}
                 onKeyUp={onKeyUpHandler}

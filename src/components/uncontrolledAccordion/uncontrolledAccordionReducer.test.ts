@@ -1,5 +1,5 @@
 import {StateType} from "./UncontrolledAccordion";
-import {uncontrolledAccordionReducer} from "./uncontrolledAccordion-reducer";
+import {uncontrolledAccordionReducer} from "./uncontrolledAccordionReducer";
 
 let startState: StateType
 beforeEach(() => {
